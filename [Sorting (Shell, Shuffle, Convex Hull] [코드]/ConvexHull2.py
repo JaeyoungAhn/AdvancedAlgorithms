@@ -26,7 +26,7 @@ def grahamScan(arys):
             if ary[0] > init_point[0]:
                 init_point = ary
 
-    # sorting in a way that smaller degree, bigger y and smaller x comes last.
+    # sorting in a way that smaller degree, smaller y and smaller x comes last.
     arys.sort(key=lambda p: (-p[1],-p[0]))
     new_arys = degreeScan(init_point, arys)
     new_arys.sort(key=lambda p:-p[2])
