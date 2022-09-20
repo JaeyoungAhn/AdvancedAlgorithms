@@ -34,9 +34,9 @@ def run(n):  # n x n개만큼 t회의 시뮬레이션 반복
         direction = []
         if p-n >= 0:
             direction.append(p-n)
-        if (p+1 < n*n) and (p+1 % n != 0):
+        if (p+1 < n*n) and ((p+1) % n != 0): # % has higher priority than +
             direction.append(p+1)
-        if (p-1 >= 0 ) and (p-1 % n != n-1):
+        if (p-1 >= 0 ) and ((p-1) % n != n-1):
             direction.append(p-1)
         if p+n < n*n:
             direction.append(p+n)
