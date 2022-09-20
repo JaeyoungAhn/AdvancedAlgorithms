@@ -45,16 +45,18 @@ def grahamScan(arys):
     if not cc:
         stack.pop()
 
-    # convert list into tuple
-    result = []
-    for ary in stack:
-        tup = tuple(ary[:2])
-        result.append(tup)
-    return result
+    return len(stack)
 
 '''
 Unit Test
 '''
 if __name__ == "__main__":
+    repeat = int(input(""))
+    lst = []
+    for i in range(repeat):
+
+        line = input()
+        x,y = line.split()
+        lst.append(list([int(x),int(y)]))
     # print(grahamScan([(0,0),(-2,-1),(-1,1),(1,-1),(3,-1),(-3,-1)]))
-    print(grahamScan([(4,2),(3,-1),(2,-2),(1,0),(0,2),(0,-2),(-1,1),(-2,-1),(-2,-3),(-3,3),(-4,0),(-4,-2),(-4,-4)]))
+    print(grahamScan(lst))
