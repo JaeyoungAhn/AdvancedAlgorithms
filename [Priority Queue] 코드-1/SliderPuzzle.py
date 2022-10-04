@@ -136,45 +136,49 @@ def solveManhattan(initialBoard):
     while True:
         get_node = minPQ.get()
         if Board.isGoal(get_node[1]):
-            pass
+            ans = []
+            ans.append(get_node[1])
+            while(get_node[3] != None):
+                get_node = get_node[3]
+                ans.append(get_node[1])
+            ans.reverse()
+            return ans
         else:
             for node in Board.neighbors(get_node[1]):
                 minPQ.put((get_node[2]+1+Board.manhattan(node), node, get_node[2]+1, get_node))
 
 
 
-
-s
 if __name__ == "__main__":    
     
     # Solvable in 0 move (already solved)
-    b10 = Board([[1,2,3],[4,5,6],[7,8,0]])    
-    solveNprint(b10)
+    # b10 = Board([[1,2,3],[4,5,6],[7,8,0]])
+    # solveNprint(b10)
     
     # Solvable in 4 moves
-    # b11 = Board([[0,1,3],[4,2,5],[7,8,6]])
-    # solveNprint(b11)
+    b11 = Board([[0,1,3],[4,2,5],[7,8,6]])
+    solveNprint(b11)
 
-    '''
+
     # Solvable in 14 moves
-    b12 = Board([[8,1,3],[4,0,2],[7,6,5]])
-    solveNprint(b12)
+    # b12 = Board([[8,1,3],[4,0,2],[7,6,5]])
+    # solveNprint(b12)
     
     # Solvable in 24 moves
-    b14 = Board([[3,2,1],[6,5,4],[0,7,8]])
-    solveNprint(b14)
-    print(b14.hamming())
-    print(b14.manhattan())
+    # b14 = Board([[3,2,1],[6,5,4],[0,7,8]])
+    # solveNprint(b14)
+    # print(b14.hamming())
+    # print(b14.manhattan())
     
     # Solvable in 4 moves
-    b15 = Board([[1,2,3,4,5,6,7,8,9,10],[11,12,13,14,15,16,17,18,19,20],[21,22,23,24,25,26,27,28,29,30],\
-        [31,32,33,34,35,36,37,38,39,40],[41,42,43,44,45,46,47,48,49,50],[51,52,53,54,55,56,57,58,59,60],\
-        [61,62,63,64,65,66,67,68,69,70],[71,72,73,74,75,76,77,78,79,80],[81,82,83,84,85,86,0,87,89,90],\
-        [91,92,93,94,95,96,97,88,98,99]])
-    solveNprint(b15)
-    print(b15.hamming())
-    print(b15.manhattan())
-    '''
+    # b15 = Board([[1,2,3,4,5,6,7,8,9,10],[11,12,13,14,15,16,17,18,19,20],[21,22,23,24,25,26,27,28,29,30],\
+    #     [31,32,33,34,35,36,37,38,39,40],[41,42,43,44,45,46,47,48,49,50],[51,52,53,54,55,56,57,58,59,60],\
+    #     [61,62,63,64,65,66,67,68,69,70],[71,72,73,74,75,76,77,78,79,80],[81,82,83,84,85,86,0,87,89,90],\
+    #     [91,92,93,94,95,96,97,88,98,99]])
+    # solveNprint(b15)
+    # print(b15.hamming())
+    # print(b15.manhattan())
+
 
     '''
     #
