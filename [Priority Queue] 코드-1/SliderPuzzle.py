@@ -145,8 +145,10 @@ def solveManhattan(initialBoard):
             return ans
         else:
             for node in Board.neighbors(get_node[1]):
+                temp_node = get_node[3]
+                if (temp_node is not None) and (node == temp_node[1]):
+                    continueㅇㅇ
                 minPQ.put((get_node[2]+1+Board.manhattan(node), node, get_node[2]+1, get_node))
-
 
 
 if __name__ == "__main__":    
@@ -156,8 +158,8 @@ if __name__ == "__main__":
     # solveNprint(b10)
     
     # Solvable in 4 moves
-    b11 = Board([[0,1,3],[4,2,5],[7,8,6]])
-    solveNprint(b11)
+    # b11 = Board([[0,1,3],[4,2,5],[7,8,6]])
+    # solveNprint(b11)
 
 
     # Solvable in 14 moves
@@ -165,8 +167,8 @@ if __name__ == "__main__":
     # solveNprint(b12)
     
     # Solvable in 24 moves
-    # b14 = Board([[3,2,1],[6,5,4],[0,7,8]])
-    # solveNprint(b14)
+    b14 = Board([[3,2,1],[6,5,4],[0,7,8]])
+    solveNprint(b14)
     # print(b14.hamming())
     # print(b14.manhattan())
     
