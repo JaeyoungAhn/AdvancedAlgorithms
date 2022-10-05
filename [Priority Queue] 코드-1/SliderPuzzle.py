@@ -147,7 +147,7 @@ def solveManhattan(initialBoard):
             for node in Board.neighbors(get_node[1]):
                 temp_node = get_node[3]
                 if (temp_node is not None) and (node == temp_node[1]):
-                    continueㅇㅇ
+                    continue
                 minPQ.put((get_node[2]+1+Board.manhattan(node), node, get_node[2]+1, get_node))
 
 
