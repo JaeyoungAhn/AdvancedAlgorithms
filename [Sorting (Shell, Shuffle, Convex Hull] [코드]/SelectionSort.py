@@ -1,10 +1,10 @@
 def selectionSort(a):    
-    for i in range(len(a)-1):
+    for i in range(len(a)-1): # N개보다 1번 적게 시행
         # Find the minimum in a[i]~a[N-1]
         min_idx = i
         for j in range(i+1, len(a)):
             if a[j] < a[min_idx]:
-                min_idx = j
+                min_idx = j # 제일 작은 것의 인덱스를 바꿔간다
         
         # Swap the found minimum with a[i]
         a[i], a[min_idx] = a[min_idx], a[i]

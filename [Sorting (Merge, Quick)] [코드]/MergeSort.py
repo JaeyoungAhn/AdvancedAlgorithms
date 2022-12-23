@@ -6,8 +6,11 @@ def merge(a, aux, lo, mid, hi):
     
     i, j = lo, mid+1
     for k in range(lo, hi+1):
-        if i>mid: a[k], j = aux[j], j+1            
-        elif j>hi: a[k], i = aux[i], i+1            
+        ## 하나가 끝난 경우
+        if i>mid: a[k], j = aux[j], j+1 # 전체 배열 길이 만큼을 이용하므로
+        elif j>hi: a[k], i = aux[i], i+1
+
+        ## 둘 다 끝나지 않은 경우
         elif aux[i] <= aux[j]: a[k], i = aux[i], i+1
         else: a[k], j = aux[j], j+1            
 

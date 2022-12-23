@@ -1,5 +1,5 @@
 def insertionSort(a):    
-    for i in range(1, len(a)):
+    for i in range(1, len(a)): # index:0는 필요없음
         key = a[i]     # Element to move at current iteration
         j = i-1
         while j>=0 and a[j] > key:

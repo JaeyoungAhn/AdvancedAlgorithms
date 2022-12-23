@@ -3,17 +3,20 @@ def shellSort(a):
     h = 1
     while h < N/3:
         h = 3*h + 1   # Knuth's Sequence 1, 4, 13, 40, 121, 364, ...
+    # 먼저 3를 키워간다.
+    # h에 1,2,3,4,...를 대입하는게 아니라 결과로 받는 h를 다음의 h로 사용하는 것이다.
 
     numSwapsTotal = 0
     while h >= 1:        
         _, numSwaps = hInsertionSort(a, h)
         numSwapsTotal += numSwaps
         h = h//3
+        # 정수 나눗셈
     
     return a, numSwapsTotal
 
 def hInsertionSort(a, h):
-    numSwaps = 0  
+    numSwaps = 0
     for i in range(h, len(a)):  # Begin from a[h]
         key = a[i]     # Element to move at current iteration
         j = i-h
@@ -42,8 +45,8 @@ if __name__ == "__main__":
     print(hInsertionSort(a2, 1))
 
     # Shell Sort with Knuth's Sequence
-    #print("Shell Sort with Knuth's Sequence")
-    #print(shellSort(a3))
+    print("Shell Sort with Knuth's Sequence")
+    print(shellSort(a3))
 
     h = 1
     N = 40

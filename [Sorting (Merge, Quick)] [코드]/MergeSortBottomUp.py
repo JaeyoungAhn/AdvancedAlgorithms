@@ -21,14 +21,12 @@ def mergeSort(a):
     while(sz<len(a)):
         for lo in range(0, len(a)-sz, sz*2):
             merge(a, aux, lo, lo+sz-1, min(lo+sz+sz-1, len(a)-1))            
-        sz += sz  # Multiply by 2
-
+        sz += sz  # Multiply by 2=
     return a
 
 if __name__ == "__main__":
     print(merge([1,5,2,3], [None]*4, 0, 1, 3))
     print(merge(["e","e","g","m","r","a","c","e","r","t"], [None]*10, 0, 4, 9))
-    
     print(mergeSort([5,1,3,2]))
     print(mergeSort(["e","r","m","g","e","c","a","r","t","e"]))
 

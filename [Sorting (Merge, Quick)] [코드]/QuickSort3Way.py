@@ -3,7 +3,7 @@ import random
 # Partition a[lo~hi] into 3-sections and then continue to partition each half recursively
 def partition3Way(a, lo, hi):
     if (hi <= lo): return
-    v = a[lo]
+    v = a[lo] ########## 기준 원소를 하나 정한다 #######
     lt, gt = lo, hi  # Indices to put next items <v and >v    
     i = lo
     while i <= gt:

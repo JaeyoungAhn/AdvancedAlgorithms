@@ -26,11 +26,13 @@ def grahamScan(arys):
             if ary[0] > init_point[0]:
                 init_point = ary
 
-    # sorting in a way that smaller degree, smaller y and smaller x comes last.
+    # sorting in a way that smaller degree, smaller y and smaller x comes last
+    # so that after popping from the last index returns smaller degree
     arys.sort(key=lambda p: (-p[1],-p[0]))
     new_arys = degreeScan(init_point, arys)
     new_arys.sort(key=lambda p:-p[2])
 
+    print(new_arys)
     stack = []
     while len(new_arys) > 0: # repeat til none is left in the array
         stack.append(new_arys.pop())
